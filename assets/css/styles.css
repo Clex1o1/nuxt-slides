@@ -14,7 +14,8 @@
 @layer base {
   * {
     @apply text-white;
-    font-size: 20px;
+    font-size: 22px;
+    line-height: 1.2;
   }
   h1 {
     @apply font-bold;
@@ -32,5 +33,238 @@
   ul li {
     @apply list-outside;
     @apply list-disc;
+    @apply py-2;
   }
+  ul ul {
+    @apply px-4;
+    @apply py-2;
+  }
+  textarea {
+    @apply text-black;
+  }
+  .nuxt-content pre[class*='language-'] {
+    @apply bg-gray-dark;
+    @apply text-xs;
+  }
+  .nuxt-content table {
+    width: 100%;
+    @apply mt-4;
+  }
+  .nuxt-content table th {
+    @apply text-left;
+  }
+  .nuxt-content table td {
+  }
+  .nuxt-content img {
+    @apply mx-auto;
+    @apply my-4;
+  }
+}
+
+.button {
+  @apply border-green;
+  @apply border-solid;
+  @apply border-2;
+  @apply rounded-full;
+  @apply px-4;
+  @apply py-2;
+
+  transition: transform 300ms ease, box-shadow 300ms ease, color 300ms ease;
+  @apply inline-block;
+  @apply relative;
+}
+
+.button:hover {
+  @apply text-green;
+  transform: translateY(2px);
+  box-shadow: 0px 1px 15px 3px rgba(0, 255, 0, 0.3);
+}
+
+/* psism.csss override */
+
+/**
+ * prism.js default theme for JavaScript, CSS and HTML
+ * Based on dabblet (http://dabblet.com)
+ * @author Lea Verou
+ */
+
+code[class*='language-'],
+pre[class*='language-'] {
+  color: black;
+  background: none;
+  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
+  font-size: 1em;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+
+  -moz-tab-size: 4;
+  -o-tab-size: 4;
+  tab-size: 4;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+pre[class*='language-']::-moz-selection,
+pre[class*='language-'] ::-moz-selection,
+code[class*='language-']::-moz-selection,
+code[class*='language-'] ::-moz-selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+pre[class*='language-']::selection,
+pre[class*='language-'] ::selection,
+code[class*='language-']::selection,
+code[class*='language-'] ::selection {
+  text-shadow: none;
+  background: #b3d4fc;
+}
+
+@media print {
+  code[class*='language-'],
+  pre[class*='language-'] {
+    text-shadow: none;
+  }
+}
+
+/* Code blocks */
+pre[class*='language-'] {
+  padding: 1em;
+  margin: 0.5em 0;
+  overflow: auto;
+}
+
+/* Inline code */
+:not(pre) > code[class*='language-'] {
+  padding: 0.1em;
+  border-radius: 0.3em;
+  white-space: normal;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+  color: #61e2ff;
+}
+
+.token.punctuation {
+  color: #fff;
+}
+
+.token.namespace {
+  opacity: 0.7;
+}
+
+.token.property,
+.token.tag,
+.token.boolean,
+.token.number,
+.token.constant,
+.token.symbol,
+.token.deleted {
+  color: #9963ff99;
+}
+
+.token.selector,
+.token.attr-name,
+.token.string,
+.token.char,
+.token.builtin,
+.token.inserted {
+  color: #9963ff;
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string {
+  color: #ffcc00;
+  /* This background color was intended by the author of this theme. */
+}
+
+.token.atrule,
+.token.attr-value,
+.token.keyword {
+  color: #ffcc00;
+  text-shadow: 0 0 2px #100c0f, 0 0 3px #ffaa0099, 0 0 5px #ffaa0099,
+    0 0 10px #ffaa0099;
+  font-style: italic;
+}
+
+.token.function,
+.token.class-name {
+  color: #fc199a;
+  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #fc199a,
+    0 0 2px #fc199a;
+}
+
+.token.regex,
+.token.important,
+.token.variable {
+  color: #e90;
+}
+
+.token.important,
+.token.bold {
+  font-weight: bold;
+}
+.token.italic {
+  font-style: italic;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.mtk3,
+.mtk6 {
+  color: #61e2ff;
+  text-shadow: 0 0 2px #001716, 0 0 5px #03edf933, 0 0 10px #ffff6633;
+}
+
+.mtk3.mtki {
+  font-style: italic;
+  color: #9963ff99;
+}
+
+.mtk4,
+.mtk5,
+.mtk11,
+.mtk14 {
+  color: #9963ff;
+}
+
+.mtk8,
+.mtk9 {
+  /* color: #fd8902; */
+  color: #ffcc00;
+  text-shadow: 0 0 2px #100c0f, 0 0 3px #ffaa0099, 0 0 5px #ffaa0099,
+    0 0 10px #ffaa0099;
+  font-style: italic;
+}
+
+/* .mtk7 {
+  color: #8a2dc0;
+  text-shadow: 0 0 2px #000, 0 0 10px #8a2dc066, 0 0 5px #8a2dc066, 0 0 25px #8a2dc066;
+} */
+
+/* .mtk8 {
+  color: #72f1b8;
+  text-shadow: 0 0 2px #100c0f, 0 0 10px #257c55, 0 0 35px #212724;
+} */
+
+.mtk7,
+.mtk10 {
+  color: #fc199a;
+  text-shadow: 0 0 2px #393a33, 0 0 35px #ffffff44, 0 0 10px #fc199a,
+    0 0 2px #fc199a;
 }

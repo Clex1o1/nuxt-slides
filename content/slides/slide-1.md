@@ -1,8 +1,5 @@
 ---
-title: Welcome to my Presentation
+title: Bring your DX to the Nuxt Level
+subtitle: Introducing Nuxt.js
+footnote: Alexander Classen, 17.12.2020
 ---
-
-Hello all! This is my presentation about Nuxt.js.
-
-# Hello audience!
-## Audience: Hello Back!

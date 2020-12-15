@@ -1,5 +1,5 @@
 ---
-title: Slide 4
+title: Are you Nuxt?
 ---
 
-# Slide 4
+<nuxt-link class="button" to="5">Skip Vue.js</nuxt-link>

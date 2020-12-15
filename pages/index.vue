@@ -1,6 +1,6 @@
 <template>
   <div class="content" @click="$router.push('slides/1')">
-    <h1 class="text-6xl">Welcome to my presentation!</h1>
+    <h1 class="text-6xl">Welcome.</h1>
   </div>
 </template>
 

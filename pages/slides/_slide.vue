@@ -1,10 +1,13 @@
 <template>
-  <div class="absolute">
+  <div class="relative">
     <template v-if="slide">
       <div :key="slide.slug">
-        <h2 class="text-green text-lg">{{ slide.title }}</h2>
+        <h2 class="text-green text-lg">{{ slide.subtitle }}</h2>
         <h1>{{ slide.title }}</h1>
-        <nuxt-content ref="doc" :document="slide" class="content" />
+        <nuxt-content ref="doc" :document="slide" class="content prose" />
+      </div>
+      <div class="footnote mt-4">
+        <h4>{{ slide.footnote }}</h4>
       </div>
     </template>
   </div>

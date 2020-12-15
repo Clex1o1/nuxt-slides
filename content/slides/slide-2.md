@@ -1,6 +1,8 @@
 ---
-title: Slide 2
+title: About me
 ---
 
-- Test
-- test 2
+- Full stack developer since 2013
+- Educated IT specialist for system integration
+- Start in a small Agency
+- Head of Development at Westwerk

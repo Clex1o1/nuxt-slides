@@ -1,5 +1,6 @@
 ---
-title: Slide 3
+title: Westwerk
 ---
 
-Hello World! I'm slide 3
+- Started as an agency for websites, shops and custom solutions based on web technology
+- Currently growing to conception, planing and integration of software and systems
