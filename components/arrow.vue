@@ -1,6 +1,14 @@
 <template>
-  <div class="arrow" @click="$emit(`slide-${direction}`)">
-    <span class="icon text-6xl cursor-pointer">{{ icon }}</span>
+  <div
+    class="arrow cursor-pointer w-8 h-8"
+    @click="$emit(`slide-${direction}`)"
+  >
+    <img
+      class="icon"
+      :class="direction"
+      src="@/assets/icons/arrow.svg"
+      alt="Logo"
+    />
   </div>
 </template>
 
@@ -22,3 +30,8 @@ export default {
   },
 }
 </script>
+<style scoped>
+.icon.right {
+  transform: rotate(180deg);
+}
+</style>

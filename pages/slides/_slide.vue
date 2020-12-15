@@ -1,77 +1,64 @@
 <template>
-  <div class="slide absolute">
+  <div class="absolute">
     <template v-if="slide">
-      <transition :name="`slide-${direction}`" mode="out-in">
-        <div :key="slide.slug">
-          {{ slide.title }}
-          <nuxt-content :document="slide" />
-        </div>
-      </transition>
+      <div :key="slide.slug">
+        <h2 class="text-green text-lg">{{ slide.title }}</h2>
+        <h1>{{ slide.title }}</h1>
+        <nuxt-content ref="doc" :document="slide" class="content" />
+      </div>
     </template>
-    <slide-navigation
-      class="fixed bottom-0 right-0 mr-3"
-      :navigation-items="siblings"
-      @slide-left="slideLeft"
-      @slide-right="slideRight"
-    />
   </div>
 </template>
 
 <script>
 export default {
-  transition: 'slide-right',
-  async asyncData({ $content, route }) {
+  transition(to, from) {
+    if (!from) return 'slide-right'
+    if (!from.params.slide || !to.params.slide) return 'fade'
+    return +to.params.slide < +from.params.slide ? 'slide-left' : 'slide-right'
+  },
+  async asyncData({ $content, route, store }) {
+    const slug = 'slide-' + route.params.slide
     const slides = await $content('slides').sortBy('slug').fetch()
-    const slide = await $content('slides', route.params.slide).fetch()
+    const slide = await $content('slides', slug).fetch()
     const siblings = await $content('slides')
       .sortBy('slug')
       .surround(slide.slug)
       .fetch()
+    store.commit('setSlides', slides)
+    store.commit('setSiblings', siblings)
     return { slides, slide, siblings }
   },
   data() {
     return {
-      id: this.$route.params.slide,
+      count: 0,
     }
   },
   mounted() {
-    window.addEventListener('keyup', this.keyup)
-  },
-  beforeDestroy() {
-    window.removeEventListener('keyup', this.keyup)
-  },
-  methods: {
-    keyup({ key }) {
-      if (key === 'ArrowLeft') this.slideLeft()
-      if (key === 'ArrowRight') this.slideRight()
-      if (key === 'ArrowRown') this.slideDown()
-      if (key === 'ArrowUP') this.slideUp()
-    },
-    slideRight() {
-      this.transition = 'slide-right'
-      this.activeSlide =
-        this.activeSlide++ >= this.slides.length - 1
-          ? this.slides.length - 1
-          : this.activeSlide++
-    },
-    slideLeft() {
-      this.transition = 'slide-left'
-      this.activeSlide = this.activeSlide-- <= 0 ? 0 : this.activeSlide--
-    },
+    const element = this.$refs.doc.$el.querySelectorAll('li')
+    this.count = element.length
   },
 }
 </script>
 <style scoped>
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 150ms ease-in-out;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
+}
 .slide-right-enter,
 .slide-right-leave-to {
   opacity: 0;
 }
 .slide-right-leave-to {
-  transform: translateX(-100%);
+  transform: translateX(-10vw);
 }
 
 .slide-right-enter {
-  transform: translateX(100%);
+  transform: translateX(10vw);
 }
 .slide-left-enter,
 .slide-left-leave-to {
@@ -79,11 +66,11 @@ export default {
 }
 
 .slide-left-leave-to {
-  transform: translateX(100%);
+  transform: translateX(10vw);
 }
 
 .slide-left-enter {
-  transform: translateX(-100%);
+  transform: translateX(-10vw);
 }
 .slide-right-enter-active,
 .slide-right-leave-active,

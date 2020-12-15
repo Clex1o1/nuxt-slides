@@ -1,0 +1,36 @@
+@layer base {
+  @font-face {
+    font-family: ITC Avant Garde Gothic;
+    font-weight: 400;
+    src: url(/fonts/itc-avant-garde-gothic-medium.otf) format('woff');
+  }
+  @font-face {
+    font-family: ITC Avant Garde Gothic;
+    font-weight: 600;
+    src: url(/fonts/itc-avant-garde-gothic-std-bold.otf) format('woff');
+  }
+}
+
+@layer base {
+  * {
+    @apply text-white;
+    font-size: 20px;
+  }
+  h1 {
+    @apply font-bold;
+    @apply text-6xl;
+  }
+  h2 {
+    @apply font-bold;
+    @apply text-6xl;
+  }
+  h3 {
+    @apply font-bold;
+    @apply text-5xl;
+  }
+
+  ul li {
+    @apply list-outside;
+    @apply list-disc;
+  }
+}
