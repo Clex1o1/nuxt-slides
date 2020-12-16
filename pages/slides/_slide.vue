@@ -22,10 +22,10 @@ export default {
   },
   async asyncData({ $content, route, store }) {
     const slug = 'slide-' + route.params.slide
-    const slides = await $content('slides').sortBy('slug').fetch()
+    const slides = await $content('slides').sortBy('page').fetch()
     const slide = await $content('slides', slug).fetch()
     const siblings = await $content('slides')
-      .sortBy('slug')
+      .sortBy('page')
       .surround(slide.slug)
       .fetch()
     store.commit('setSlides', slides)

@@ -1,5 +1,6 @@
 ---
-title: file-base routing
+page: 14
+title: File-Based Routing
 ---
 
-![structure](/images/file-base-routing.png)
+![structure](/images/generated-routes.png)

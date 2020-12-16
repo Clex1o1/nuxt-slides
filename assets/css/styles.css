@@ -39,6 +39,9 @@
     @apply px-4;
     @apply py-2;
   }
+  li li {
+    list-style-type: circle;
+  }
   textarea {
     @apply text-black;
   }

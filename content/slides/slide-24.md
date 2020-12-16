@@ -1,8 +1,10 @@
 ---
-subtitle: SG
-title: Static Generation
+page: 24
+title: Nuxt Modules
 ---
 
-- add `target: 'static'` in your `nuxt.config.js`
-- crawler
-- manually adding dynamic routes
+- Content
+- PWA
+- Tailwind
+- Axios/Fetch
+- ...

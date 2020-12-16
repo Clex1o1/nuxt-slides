@@ -1,9 +1,4 @@
 ---
-title: Nuxt Modules
+page: 25
+title: Examples
 ---
-
-- content
-- PWA
-- Tailwind
-- Axios/Fetch
-- ...

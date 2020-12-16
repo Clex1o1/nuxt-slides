@@ -1,19 +1,19 @@
 <template>
   <main class="bg-black">
-    <progress-bar class="z-10" />
+    <progress-bar class="z-20" />
     <img
       class="fixed logo bottom-0"
       src="@/assets/icons/westwerk-bildmarke.svg"
       alt="Logo"
     />
     <div
-      class="container mx-auto px-2 py-2 flex justify-center items-center min-h-screen"
+      class="container mx-auto px-2 py-40 flex justify-center items-center min-h-screen z-10 relative"
     >
       <nuxt />
     </div>
     <slide-navigation
       v-if="siblings.length"
-      class="fixed bottom-0 right-0 mr-3"
+      class="fixed bottom-0 right-0 mr-3 z-20"
       :navigation-items="[prev, next]"
       @slide-left="slideLeft"
       @slide-right="slideRight"

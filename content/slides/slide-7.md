@@ -1,10 +1,4 @@
 ---
-title: My Problem
+page: 7
+title: "Vue.js' advantage:"
 ---
-
-- jQuery and basic JS background
-- Startet with react
-
-- Complicated
-- Too many ways, too different tutorials
-- No success

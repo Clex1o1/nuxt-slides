@@ -1,5 +1,6 @@
 ---
-title: file-base routing
+page: 15
+title: Dynamic Routing
 ---
 
-![structure](/images/generated-routes.png)
+![structure](/images/file-base-routing.png)

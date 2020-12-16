@@ -1,18 +1,8 @@
 ---
-title: Features
+page: 22
+subtitle: SSR
+title: Server-Side-Rendering
 ---
 
-- `nuxt-link` and prefetching
-- Lazy load components
-
-```vue
-<lazy-component>...</lazy-component>
-```
-
-```vue
-... components: { MyLazyComponent: () =>
-import('@/components/my-lazy-component.vue') } ...
-```
-
-- Server-Side-Rendering
-- Static-Site-Generator
+- Default
+- node.js required

@@ -1,10 +1,10 @@
 ---
-title: My Problem
+page: 6
+title: My Problems
 ---
 
 - jQuery and basic JS background
-- Startet with react
-
+- Started with React
 - Complicated
-- Too many ways, too different tutorials
-- No success
+- Too many ways and too many different tutorials
+- No success 😢
